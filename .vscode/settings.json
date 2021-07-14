@@ -1,0 +1,5 @@
+{
+    "problems.showCurrentInStatus": true,
+    "git.autofetch": true,
+    "typescript.disableAutomaticTypeAcquisition": true
+}
