@@ -1,12 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import { User } from '../model/Model';
+import { AuthenService } from '../services/AuthenService';
+import { Login } from './Login';
+
+/* User should be like a globaler part of our application, it will be available 
+throughout the whole project and maybe inside our backend 
+a user might be available only after log in */
+interface AppState{
+  user: User | undefined 
+}
 
 // il ya 2 facons de creer un componemt soit avec une class soit une function
-export class App extends React.Component {
+// App component is the parent to old the component
+export class App extends React.Component <{}, AppState> {
+
+  private authenService: AuthenService = new AuthenService(); // service wich can pass to what component might need it
   
   render(){
-    return (<div> App from class Works </div>
+    return (
+  
+      // Send/pass Data from a PC into a CC
+    <div> App from class Works 
+        <Login authenService = {this.authenService}/> 
+    </div>
     )
   }
 }
