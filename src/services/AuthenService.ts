@@ -6,8 +6,8 @@ import { User } from '../model/Model';
 export class AuthenService {
   
     /**
-     * async Methode because it will access services via the internet
-     * User object If login is successful, otherwisew undefined 
+     * async methode because it will access services via the internet
+     * return User object if login is successful, otherwise undefined 
      */
     public async login(userName: string, password: string):Promise<User | undefined> {
         // somme dummi programm first 

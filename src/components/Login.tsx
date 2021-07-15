@@ -27,7 +27,7 @@ export class Login extends React.Component <LoginProps, LoginState> {
 
     }
 
-    //Should be called everytime the value of user (UN and PW) 
+    //Should be called everytime the value of user (UN and PW) change
     private setUserName(event: customEvent) {
         this.setState({userName: event.target.value})
         console.log('Setting username to: ' + event.target.value)
@@ -37,7 +37,7 @@ export class Login extends React.Component <LoginProps, LoginState> {
         this.setState({password: event.target.value})
     }
 
-    // HandleSubmit async because we will try to access our services
+    // async because we will try to access our services
     private async handleSubmit(event: SyntheticEvent) {
         event.preventDefault();
         const result = await this.props.authenService.login(
@@ -53,7 +53,7 @@ export class Login extends React.Component <LoginProps, LoginState> {
     }
 
 
-    // What should we render/display to the User 
+    // What we should render/display to the User 
     render(){
         return (
             <div>

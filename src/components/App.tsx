@@ -4,15 +4,16 @@ import { User } from '../model/Model';
 import { AuthenService } from '../services/AuthenService';
 import { Login } from './Login';
 
-/* User should be like a globaler part of our application, it will be available 
-throughout the whole project and maybe inside our backend 
-a user might be available only after log in */
+/* User should be like a global part of our application. 
+It will be available 
+throughout the whole project and maybe inside our backend.
+a user might be available only after login */
 interface AppState{
   user: User | undefined 
 }
 
 // il ya 2 facons de creer un componemt soit avec une class soit une function
-// App component is the parent to old the component
+// App-component is the parent to all the component
 export class App extends React.Component <{}, AppState> {
 
   private authenService: AuthenService = new AuthenService(); // service wich can pass to what component might need it
@@ -29,7 +30,7 @@ export class App extends React.Component <{}, AppState> {
 }
 
 
-/*  the endresult is this HTML
+/* 
 function App() {
   return (
     <div> App from function Works </div> 
