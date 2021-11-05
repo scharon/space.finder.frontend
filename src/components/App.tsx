@@ -12,7 +12,7 @@ interface AppState{
 }
 
 // il ya 2 facons de creer un componemt soit avec une class soit une function
-// App component is the parent to old the component
+
 export class App extends React.Component <{}, AppState> {
 
   private authenService: AuthenService = new AuthenService(); // service wich can pass to what component might need it
@@ -21,7 +21,7 @@ export class App extends React.Component <{}, AppState> {
     return (
   
       // Send/pass Data from a PC into a CC
-    <div> App from class Works 
+     <div> 
         <Login authenService = {this.authenService}/> 
     </div>
     )
