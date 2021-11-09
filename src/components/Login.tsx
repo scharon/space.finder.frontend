@@ -1,8 +1,10 @@
 import React, { SyntheticEvent } from "react";
+import { User } from "../model/Model";
 import { AuthenService } from "../services/AuthenService";
 
 interface LoginProps {
-    authenService: AuthenService 
+    authenService: AuthenService, 
+    setUser:(user: User) => void
 }
 
 interface LoginState {
@@ -48,6 +50,7 @@ export class Login extends React.Component <LoginProps, LoginState> {
         if (result) {
             //console.log(result);
             this.setState({loginSuccesfull: true});
+            this.props.setUser(result);  // We got a User, when we got a result
         } else {
             //console.log('Wrong login');
             this.setState({loginSuccesfull: false});

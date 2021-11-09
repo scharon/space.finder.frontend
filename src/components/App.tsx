@@ -16,13 +16,26 @@ interface AppState{
 export class App extends React.Component <{}, AppState> {
 
   private authenService: AuthenService = new AuthenService(); // service wich can pass to what component might need it
+
+  constructor(props: any){
+    super(props);
+
+    this.setUser = this.setUser.bind(this);
+  }
+
+  private setUser (user: User){
+    this.setState({
+      user: user
+    });
+    console.log('setting the user:' + user);
+  }
   
   render(){
     return (
   
       // Send/pass Data from a PC into a CC
      <div> 
-        <Login authenService = {this.authenService}/> 
+        <Login authenService={this.authenService} setUser={this.setUser}/> 
     </div>
     )
   }
