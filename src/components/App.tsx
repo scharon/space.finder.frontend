@@ -42,11 +42,6 @@ export class App extends React.Component <{}, AppState> {
 }
 
 
-/*  the endresult is this HTML
-function App() {
-  return (
-    <div> App from function Works </div> 
-  );
-}
 
-export default App;*/
+
+// export default App;*/

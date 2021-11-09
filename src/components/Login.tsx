@@ -59,11 +59,10 @@ export class Login extends React.Component <LoginProps, LoginState> {
     }
 
 
-    // What should we render/display to the User 
     render(){
 
         let loginMessage: any;
-         // give a massage based on some conditions 
+         // give a massage based on this conditions 
         if (this.state.loginAttenpted){
             if(this.state.loginSuccesfull){
                 loginMessage = <label> Login succesful</label>
